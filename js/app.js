@@ -25,38 +25,47 @@ function renderApp() {
 
   let html = '';
 
-  switch (mode) {
-    case 'mobile':
-      html = renderMobileShell();
-      break;
-    case 'hotel':
-      html = renderHotelFrontDeskDashboard();
-      break;
-    case 'kitchen':
-      html = renderKitchenKDSDashboard();
-      break;
-    case 'scanner':
-      html = renderPoolGymScannerDashboard();
-      break;
-    case 'admin':
-      html = renderSuperAdminDashboard();
-      break;
-    default:
-      html = renderMobileShell();
+  try {
+    switch (mode) {
+      case 'mobile':
+        html = renderMobileShell();
+        break;
+      case 'hotel':
+        html = renderHotelFrontDeskDashboard();
+        break;
+      case 'kitchen':
+        html = renderKitchenKDSDashboard();
+        break;
+      case 'scanner':
+        html = renderPoolGymScannerDashboard();
+        break;
+      case 'admin':
+        html = renderSuperAdminDashboard();
+        break;
+      default:
+        html = renderMobileShell();
+    }
+  } catch (err) {
+    console.error('Error rendering module:', err);
+    html = `<div class="p-8 text-center text-red-400">Rendering Error: ${err.message}</div>`;
   }
 
   container.innerHTML = html;
 
-  // Initialize Lucide Icons
-  if (window.lucide) {
-    window.lucide.createIcons();
+  // Initialize Lucide Icons safely
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    try {
+      window.lucide.createIcons();
+    } catch (iconErr) {
+      console.warn('Lucide icon warning:', iconErr);
+    }
   }
 }
 
 // Attach global render hook
 window.renderApp = renderApp;
 
-// Initial render on load
+// Initial render on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   renderApp();
 });
