@@ -376,7 +376,7 @@ class AppStore {
     this.setMobileScreen(16); // Order status screen
   }
 
-  bookRoom(add-ons = []) {
+  bookRoom(addOns = []) {
     const room = this.rooms.find(r => r.id === this.selectedRoomId) || this.rooms[0];
     const token = `CS-${Math.floor(1000 + Math.random() * 9000)}`;
 
