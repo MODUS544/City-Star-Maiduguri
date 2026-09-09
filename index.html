@@ -6,6 +6,31 @@
   <title>City Star Maiduguri - Luxury Hospitality & Resort</title>
   <meta name="description" content="City Star Maiduguri 5-Star Luxury Resort App & Operational Dashboards">
   
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crimson: '#C8102E',
+            'crimson-dark': '#8B001A',
+            'crimson-light': '#FF3B5C',
+            obsidian: '#09090C',
+            'charcoal-900': '#101015',
+            'charcoal-800': '#171720',
+            'charcoal-700': '#222230',
+            'charcoal-600': '#2C2C3E',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- Google Fonts: Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,78 +39,73 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Styles -->
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-crimson selection:text-white">
+<body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-crimson selection:text-white min-h-screen">
 
   <!-- Top Global Header -->
-  <header id="main-header" class="sticky top-0 z-50 bg-charcoal-900/90 backdrop-blur-xl border-b border-crimson/20 px-4 lg:px-8 py-3.5 flex items-center justify-between shadow-2xl transition-all">
+  <header id="main-header" class="sticky top-0 z-50 bg-charcoal-900/95 backdrop-blur-xl border-b border-crimson/30 px-4 lg:px-8 py-3 flex items-center justify-between shadow-2xl">
     <!-- Brand Logo Top-Left -->
     <div class="flex items-center gap-3 cursor-pointer" onclick="appStore.switchMode('mobile')">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-crimson-dark flex items-center justify-center shadow-lg shadow-crimson/30 border border-white/20">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-crimson-dark flex items-center justify-center shadow-lg shadow-crimson/40 border border-white/20">
         <i data-lucide="crown" class="w-5 h-5 text-white"></i>
       </div>
       <div>
         <div class="flex items-center gap-2">
-          <span class="font-outfit font-extrabold tracking-wider text-lg text-white uppercase">City Star</span>
-          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-crimson/20 border border-crimson/40 text-crimson-light uppercase tracking-widest">Maiduguri</span>
+          <span class="font-outfit font-extrabold tracking-wider text-base sm:text-lg text-white uppercase">City Star</span>
+          <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-crimson/20 border border-crimson/40 text-crimson-light uppercase tracking-widest">Maiduguri</span>
         </div>
-        <p class="text-[10px] text-slate-400 font-medium tracking-widest uppercase">Luxury Hotel & Resort</p>
+        <p class="text-[9px] sm:text-[10px] text-slate-400 font-medium tracking-widest uppercase">Luxury Hotel & Resort</p>
       </div>
     </div>
 
     <!-- Mode Switcher Navigation -->
-    <nav class="flex items-center gap-1 sm:gap-2 bg-charcoal-800/80 p-1.5 rounded-2xl border border-white/10 shadow-inner overflow-x-auto max-w-full">
-      <button id="btn-mode-mobile" onclick="appStore.switchMode('mobile')" class="nav-mode-btn active flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all">
+    <nav class="flex items-center gap-1 sm:gap-2 bg-charcoal-800/90 p-1.5 rounded-2xl border border-white/10 shadow-inner overflow-x-auto">
+      <button id="btn-mode-mobile" onclick="appStore.switchMode('mobile')" class="nav-mode-btn active flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap">
         <i data-lucide="smartphone" class="w-4 h-4"></i>
-        <span class="hidden md:inline">Guest Mobile App</span>
-        <span class="md:hidden">App</span>
+        <span>Guest Mobile App</span>
       </button>
 
-      <button id="btn-mode-hotel" onclick="appStore.switchMode('hotel')" class="nav-mode-btn flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all">
+      <button id="btn-mode-hotel" onclick="appStore.switchMode('hotel')" class="nav-mode-btn flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap">
         <i data-lucide="hotel" class="w-4 h-4"></i>
-        <span class="hidden md:inline">Front Desk</span>
-        <span class="md:hidden">Desk</span>
+        <span>Front Desk</span>
       </button>
 
-      <button id="btn-mode-kitchen" onclick="appStore.switchMode('kitchen')" class="nav-mode-btn flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all">
+      <button id="btn-mode-kitchen" onclick="appStore.switchMode('kitchen')" class="nav-mode-btn flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap">
         <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
-        <span class="hidden md:inline">Kitchen KDS</span>
-        <span class="md:hidden">KDS</span>
+        <span>Kitchen KDS</span>
       </button>
 
-      <button id="btn-mode-scanner" onclick="appStore.switchMode('scanner')" class="nav-mode-btn flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all">
+      <button id="btn-mode-scanner" onclick="appStore.switchMode('scanner')" class="nav-mode-btn flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap">
         <i data-lucide="qr-code" class="w-4 h-4"></i>
-        <span class="hidden md:inline">Wellness Scanner</span>
-        <span class="md:hidden">Scanner</span>
+        <span>Wellness Scanner</span>
       </button>
 
-      <button id="btn-mode-admin" onclick="appStore.switchMode('admin')" class="nav-mode-btn flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all">
+      <button id="btn-mode-admin" onclick="appStore.switchMode('admin')" class="nav-mode-btn flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
-        <span class="hidden md:inline">Super Admin</span>
-        <span class="md:hidden">Admin</span>
+        <span>Super Admin</span>
       </button>
     </nav>
 
-    <!-- Header Actions / Quick Info -->
+    <!-- Header Quick Actions -->
     <div class="hidden xl:flex items-center gap-4 text-xs font-medium">
       <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
         <span>Live System Active</span>
       </div>
-      <button onclick="appStore.resetDemoData()" class="text-slate-400 hover:text-white transition-colors" title="Reset Demo Data">
+      <button onclick="appStore.resetDemoData()" class="p-2 rounded-lg bg-charcoal-800 text-slate-300 hover:text-white border border-white/10" title="Reset Demo Data">
         <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
       </button>
     </div>
   </header>
 
-  <!-- Notification Toast Container -->
+  <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
 
-  <!-- Main View Container -->
-  <main id="app-container" class="min-h-[calc(100vh-69px)] relative overflow-hidden">
-    <!-- Dynamic Content Rendered via JS -->
+  <!-- Main Content View Area -->
+  <main id="app-container" class="min-h-[calc(100vh-65px)] relative overflow-hidden bg-obsidian">
+    <!-- Rendered dynamically by JS -->
   </main>
 
   <!-- JavaScript Modules -->
