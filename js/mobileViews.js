@@ -150,8 +150,8 @@ function renderWelcomeScreen() {
     <div class="relative min-h-[640px] flex flex-col justify-between p-6 bg-cover bg-center rounded-2xl" style="background-image: linear-gradient(to bottom, rgba(63, 0, 10, 0.65), rgba(17, 24, 39, 0.96)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80');">
       <div class="flex items-center justify-between pt-2">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-brandGray800 flex items-center justify-center border border-brandRed/40 overflow-hidden shadow-lg">
-            <img src="assets/logo.png" alt="City Star Maiduguri Logo" class="w-full h-full object-cover">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center p-0.5 border border-brandRed/40 overflow-hidden shadow-lg">
+            <img src="assets/logo.png" alt="City Star Maiduguri Emblem Logo" class="w-full h-full object-contain">
           </div>
           <span class="font-outfit font-extrabold text-sm text-white tracking-widest uppercase">City Star</span>
         </div>
