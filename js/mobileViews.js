@@ -785,17 +785,17 @@ function renderWellnessLandingScreen() {
 // SCREEN 18: PASS SELECTION
 function renderPassSelectionScreen() {
   return `
-    <div class="p-6 space-y-5">
-      <div class="flex items-center justify-between">
-        <button onclick="appStore.setMobileScreen(17)" class="p-2 rounded-xl bg-brandGray800 text-white border border-brandGray700 hover:border-brandRed transition-all">
+    <div class="relative min-h-[640px] flex flex-col justify-between p-6 bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden" style="background-image: linear-gradient(to bottom, rgba(63, 0, 10, 0.65), rgba(15, 23, 42, 0.96)), url('assets/wellness-hero.jpg');">
+      <div class="flex items-center justify-between z-10">
+        <button onclick="appStore.setMobileScreen(17)" class="p-2 rounded-xl bg-brandGray800/80 backdrop-blur-md text-white border border-brandGray700 hover:border-brandRed transition-all">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
         <h2 class="font-serif font-bold text-base text-white">Select Access Pass</h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-4 z-10 my-auto py-4">
         <!-- Daily Pass -->
-        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandGray800 border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-lg hover:scale-[1.01] transition-all">
+        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandGray800/90 backdrop-blur-xl border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-xl hover:scale-[1.01] transition-all">
           <div class="space-y-1">
             <div class="font-outfit font-bold text-base text-white">Daily Pass</div>
             <div class="text-xs text-brandGray200">24-Hour full facility access</div>
@@ -804,7 +804,7 @@ function renderPassSelectionScreen() {
         </div>
 
         <!-- Monthly VIP Combo Pass -->
-        <div onclick="appStore.selectedPassTier = 'Monthly VIP Combo Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandMaroonDark border-2 border-brandRed cursor-pointer flex justify-between items-center shadow-2xl hover:scale-[1.01] transition-all relative">
+        <div onclick="appStore.selectedPassTier = 'Monthly VIP Combo Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandMaroonDark/95 backdrop-blur-xl border-2 border-brandRed cursor-pointer flex justify-between items-center shadow-2xl hover:scale-[1.01] transition-all relative">
           <span class="absolute -top-2.5 right-4 px-2.5 py-0.5 rounded-full bg-brandRed text-[9px] font-bold text-white uppercase tracking-wider">Most Popular</span>
           <div class="space-y-1">
             <div class="font-outfit font-bold text-base text-white">Monthly VIP Combo Pass</div>
