@@ -175,10 +175,10 @@ function renderWelcomeScreen() {
           Welcome to City Star
         </span>
         <h1 class="font-outfit font-black text-3xl text-white leading-tight">
-          Unrivaled Luxury <br/><span class="text-brandRedLight">& Extraordinary</span> Experience
+          Luxury Stay <br/><span class="text-brandRedLight">• Fine Dining • Wellness</span>
         </h1>
         <p class="text-xs text-brandGray200 mt-2 font-normal leading-relaxed">
-          Indulge in 5-star accommodations, gourmet fine dining, and exclusive wellness membership.
+          Book luxury rooms, order fine meals, and access our wellness facilities with ease.
         </p>
       </div>
 
