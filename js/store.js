@@ -1,5 +1,6 @@
 /**
- * Central State & Business Logic Store for City Star Maiduguri
+ * Central State & Business Logic Store for City Star Restaurant & Accomodation
+ * Currency: Nigerian Naira (₦)
  */
 
 const INITIAL_ROOMS = [
@@ -7,26 +8,26 @@ const INITIAL_ROOMS = [
     id: 'room-101',
     name: 'Executive Deluxe Suite',
     category: 'Deluxe',
-    price: 320,
+    price: 120000,
     capacity: '2 Guests',
     bed: '1 King Bed',
     size: '55 m²',
     view: 'Resort Pool & Garden View',
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
     amenities: ['Wi-Fi 6', 'Marble Bathroom', 'Private Balcony', 'Nespresso Machine', '24/7 Room Service'],
-    status: 'Available', // Available, Occupied, Cleaning Needed, Out of Order
+    status: 'Available',
     rating: 4.9,
-    description: 'Experience refined elegance with floor-to-ceiling windows overlooking the luxury resort pool, featuring hand-crafted mahogany finishes and a lavish soaking tub.'
+    description: 'Experience refined elegance with floor-to-ceiling windows overlooking the pool, featuring hand-crafted mahogany finishes and a lavish soaking tub.'
   },
   {
     id: 'room-102',
     name: 'Presidential Royal Suite',
     category: 'Suite',
-    price: 650,
+    price: 250000,
     capacity: '4 Guests',
     bed: '2 Super King Beds',
     size: '110 m²',
-    view: 'Panoramic City & Sunset View',
+    view: 'Panoramic Sunset View',
     image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
     amenities: ['Private Jacuzzi', 'Butler Service', 'Lounge Bar', 'Walk-in Closet', 'Smart Automation'],
     status: 'Occupied',
@@ -37,13 +38,13 @@ const INITIAL_ROOMS = [
     id: 'room-103',
     name: 'Penthouse Ocean Villa',
     category: 'Villa',
-    price: 1200,
+    price: 450000,
     capacity: '6 Guests',
     bed: '3 Master King Suites',
     size: '240 m²',
     view: 'Private Pool & Sky Deck View',
     image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Private Infinity Pool', 'Private Chef Kitchen', 'Helipad Access', 'VIP Wellness Pass', 'Airport Limousine'],
+    amenities: ['Private Plunge Pool', 'Private Chef Kitchen', 'Helipad Access', 'VIP Access Pass', 'Chauffeur Service'],
     status: 'Available',
     rating: 5.0,
     description: 'Exclusive multi-level penthouse with private plunge pool, outdoor dining terrace, private chef access, and dedicated luxury concierge.'
@@ -52,16 +53,16 @@ const INITIAL_ROOMS = [
     id: 'room-104',
     name: 'Royal Heritage Suite',
     category: 'Executive',
-    price: 480,
+    price: 180000,
     capacity: '3 Guests',
     bed: '1 King + 1 Day Bed',
     size: '75 m²',
     view: 'Lush Botanical Gardens',
     image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Work Studio', 'Rain Shower', 'Complimentary Minibar', 'Spa Access', 'HD Home Theater'],
+    amenities: ['Work Studio', 'Rain Shower', 'Complimentary Minibar', 'Pool Access', 'HD Home Theater'],
     status: 'Cleaning Needed',
     rating: 4.8,
-    description: 'Designed for discerning travelers, featuring classic Maiduguri artisan woodwork, state-of-the-art office studio, and complimentary premium cellar minibar.'
+    description: 'Designed for discerning travelers, featuring classic artisan woodwork, state-of-the-art office studio, and complimentary premium cellar minibar.'
   }
 ];
 
@@ -70,8 +71,8 @@ const INITIAL_MENU = [
     id: 'food-01',
     name: 'Wagyu Beef Ribeye Steak (300g)',
     category: 'Mains',
-    price: 95,
-    description: 'A5 Wagyu ribeye grilled over aromatic charcoal, served with truffle butter, roasted garlic clove, and rosemary jus.',
+    price: 35000,
+    description: 'A5 Wagyu ribeye grilled over charcoal, served with truffle butter, roasted garlic clove, and rosemary jus.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
     tags: ['Chef Signature', 'Gluten Free'],
     inStock: true,
@@ -81,7 +82,7 @@ const INITIAL_MENU = [
     id: 'food-02',
     name: 'Pan-Seared Atlantic Lobster Tail',
     category: 'Mains',
-    price: 110,
+    price: 45000,
     description: 'Wild caught lobster tail basted in smoked paprika saffron butter, paired with asparagus spears and Meyer lemon caviar.',
     image: 'https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=800&q=80',
     tags: ['Seafood Special', 'Fresh'],
@@ -92,7 +93,7 @@ const INITIAL_MENU = [
     id: 'food-03',
     name: 'Truffle & Wild Mushroom Tagliatelle',
     category: 'Starters',
-    price: 42,
+    price: 18000,
     description: 'Handmade fresh pasta tossed in black winter truffle cream, parmigiano reggiano shavings, and wild chanterelles.',
     image: 'https://images.unsplash.com/photo-1621996346565-e3d5d6281318?auto=format&fit=crop&w=800&q=80',
     tags: ['Vegetarian', 'Popular'],
@@ -103,7 +104,7 @@ const INITIAL_MENU = [
     id: 'food-04',
     name: '24K Gold Leaf Artisan Soufflé',
     category: 'Desserts',
-    price: 35,
+    price: 15000,
     description: 'Warm Valrhona dark chocolate soufflé topped with edible 24-karat gold leaf flake and Madagascar vanilla bean gelato.',
     image: 'https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80',
     tags: ['Luxury Dessert'],
@@ -112,9 +113,9 @@ const INITIAL_MENU = [
   },
   {
     id: 'food-05',
-    name: 'Château Margaux Grand Cru 2015',
+    name: 'Château Margaux Grand Cru Vintage',
     category: 'Drinks',
-    price: 280,
+    price: 120000,
     description: 'Exquisite French Bordeaux red wine with notes of blackcurrant, cedar, and velvety tannins. Sommelier selection.',
     image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80',
     tags: ['Vintage Wine', 'Cellar Reserve'],
@@ -125,8 +126,8 @@ const INITIAL_MENU = [
     id: 'food-06',
     name: 'Royal Hibiscus Smoked Cocktail',
     category: 'Drinks',
-    price: 28,
-    description: 'Artisanal gin infused with organic Maiduguri zobo hibiscus, smoked rosemary sprig, lime twist, and gold dust.',
+    price: 8500,
+    description: 'Artisanal gin infused with organic zobo hibiscus, smoked rosemary sprig, lime twist, and gold dust.',
     image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80',
     tags: ['Signature Drink'],
     inStock: true,
@@ -141,11 +142,11 @@ const INITIAL_BOOKINGS = [
     roomName: 'Presidential Royal Suite',
     roomId: 'room-102',
     token: 'CS-7892',
-    checkIn: '2026-09-09',
-    checkOut: '2026-09-12',
+    checkIn: '2026-09-10',
+    checkOut: '2026-09-14',
     guests: 2,
-    amount: 1950,
-    status: 'Checked-In', // Confirmed, Checked-In, Completed
+    amount: 1000000,
+    status: 'Checked-In',
     paymentMethod: 'Credit Card (**** 4892)'
   },
   {
@@ -157,7 +158,7 @@ const INITIAL_BOOKINGS = [
     checkIn: '2026-09-10',
     checkOut: '2026-09-14',
     guests: 2,
-    amount: 1280,
+    amount: 480000,
     status: 'Confirmed',
     paymentMethod: 'Apple Pay'
   }
@@ -170,26 +171,13 @@ const INITIAL_ORDERS = [
     roomNumber: 'Suite 102',
     serviceType: 'Room Delivery',
     items: [
-      { name: 'Wagyu Beef Ribeye Steak', qty: 1, price: 95 },
-      { name: 'Château Margaux Grand Cru', qty: 1, price: 280 }
+      { name: 'Wagyu Beef Ribeye Steak', qty: 1, price: 35000 },
+      { name: 'Château Margaux Grand Cru', qty: 1, price: 120000 }
     ],
-    total: 375,
-    status: 'Preparing', // Received -> Preparing -> Ready -> Dispatched
-    createdAt: Date.now() - 600000, // 10 mins ago
+    total: 155000,
+    status: 'Preparing',
+    createdAt: Date.now() - 600000,
     prepTimer: '12:45'
-  },
-  {
-    id: 'ord-105',
-    guestName: 'Madame Amina Yusuf',
-    serviceType: 'Dine-In (Table 04)',
-    items: [
-      { name: 'Truffle & Wild Mushroom Tagliatelle', qty: 2, price: 84 },
-      { name: 'Royal Hibiscus Smoked Cocktail', qty: 2, price: 56 }
-    ],
-    total: 140,
-    status: 'Received',
-    createdAt: Date.now() - 180000, // 3 mins ago
-    prepTimer: '03:12'
   }
 ];
 
@@ -197,24 +185,24 @@ const INITIAL_PASSES = [
   {
     id: 'pass-771',
     guestName: 'Alhaji Ibrahim Usman',
-    tier: 'Monthly VIP',
-    passType: 'All-Access Luxury Combo',
-    qrCode: 'CS-PASS-771-VIP',
-    issuedAt: '2026-09-01',
-    expiresAt: '2026-10-01T23:59:59',
-    status: 'Active', // Active, Expired
-    price: 350
+    tier: 'Hourly Pass',
+    passType: 'Pool & Fitness Access',
+    qrCode: 'CS-PASS-771-1HR',
+    issuedAt: '2026-09-10',
+    expiresAt: '2026-09-10T23:59:59',
+    status: 'Active',
+    price: 5000
   },
   {
     id: 'pass-772',
     guestName: 'Engr. Kabir Bello',
     tier: 'Daily Pass',
-    passType: 'Pool & Spa Only',
-    qrCode: 'CS-PASS-772-POOL',
+    passType: 'Pool & Fitness Access',
+    qrCode: 'CS-PASS-772-DAILY',
     issuedAt: '2026-09-08',
     expiresAt: '2026-09-08T23:59:59',
     status: 'Expired',
-    price: 45
+    price: 25000
   }
 ];
 
@@ -224,7 +212,7 @@ class AppStore {
   }
 
   loadState() {
-    const saved = localStorage.getItem('city_star_store');
+    const saved = localStorage.getItem('city_star_store_naira_v2');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
@@ -232,10 +220,10 @@ class AppStore {
         this.currentMobileScreen = parsed.currentMobileScreen || 1;
         this.selectedRoomId = parsed.selectedRoomId || 'room-101';
         this.selectedFoodId = parsed.selectedFoodId || 'food-01';
-        this.selectedPassTier = parsed.selectedPassTier || 'Daily Pass';
+        this.selectedPassTier = parsed.selectedPassTier || 'Hourly Pass';
         this.cart = parsed.cart || [];
         this.cartServiceType = parsed.cartServiceType || 'Room Delivery';
-        this.cartDeliveryInfo = parsed.cartDeliveryInfo || { address: 'Room 102 - Royal Suite', roomNumber: '102', gateCode: '', phone: '+234 803 123 4567', notes: 'Please ring bell twice.' };
+        this.cartDeliveryInfo = parsed.cartDeliveryInfo || { address: 'Suite 102 - Royal Suite', roomNumber: '102', gateCode: '', phone: '+234 803 123 4567', notes: 'Please ring bell twice.' };
         this.rooms = parsed.rooms || INITIAL_ROOMS;
         this.menuItems = parsed.menuItems || INITIAL_MENU;
         this.bookings = parsed.bookings || INITIAL_BOOKINGS;
@@ -251,14 +239,14 @@ class AppStore {
       }
     }
 
-    // Default Fallback
+    // Default Fallback State
     this.currentMode = 'mobile';
     this.currentMobileScreen = 1;
     this.selectedRoomId = 'room-101';
     this.selectedFoodId = 'food-01';
-    this.selectedPassTier = 'Daily Pass';
+    this.selectedPassTier = 'Hourly Pass';
     this.cart = [
-      { foodId: 'food-01', name: 'Wagyu Beef Ribeye Steak (300g)', price: 95, quantity: 1, size: 'Standard', addOns: ['Truffle Butter (+$8)'], notes: 'Medium rare please.' }
+      { foodId: 'food-01', name: 'Wagyu Beef Ribeye Steak (300g)', price: 35000, quantity: 1, size: 'Standard', addOns: ['Truffle Butter'], notes: 'Medium rare please.' }
     ];
     this.cartServiceType = 'Room Delivery';
     this.cartDeliveryInfo = { address: 'Suite 102 - Royal Suite', roomNumber: '102', gateCode: '', phone: '+234 803 123 4567', notes: 'Please ring bell twice.' };
@@ -290,7 +278,7 @@ class AppStore {
       wellnessPasses: this.wellnessPasses,
       notifications: this.notifications
     };
-    localStorage.setItem('city_star_store', JSON.stringify(data));
+    localStorage.setItem('city_star_store_naira_v2', JSON.stringify(data));
   }
 
   notify() {
@@ -312,12 +300,12 @@ class AppStore {
 
   selectRoom(roomId) {
     this.selectedRoomId = roomId;
-    this.setMobileScreen(6); // Room details screen
+    this.setMobileScreen(6);
   }
 
   selectFood(foodId) {
     this.selectedFoodId = foodId;
-    this.setMobileScreen(11); // Food modal details
+    this.setMobileScreen(11);
   }
 
   addToCart(item) {
@@ -327,7 +315,7 @@ class AppStore {
     } else {
       this.cart.push(item);
     }
-    this.showToast('Item Added to Cart', `${item.name} added to your luxury dining order.`, 'success');
+    this.showToast('Item Added to Cart', `${item.name} added to your order.`, 'success');
     this.notify();
   }
 
@@ -363,7 +351,6 @@ class AppStore {
     this.orders.unshift(newOrder);
     this.cart = [];
 
-    // Add notification
     this.notifications.unshift({
       id: Date.now(),
       title: 'Order Sent to Kitchen',
@@ -373,7 +360,7 @@ class AppStore {
     });
 
     this.showToast('Order Placed Successfully', `Order #${newOrder.id} sent to Chef!`, 'success');
-    this.setMobileScreen(16); // Order status screen
+    this.setMobileScreen(16);
   }
 
   bookRoom(addOns = []) {
@@ -395,11 +382,8 @@ class AppStore {
     };
 
     this.bookings.unshift(newBooking);
-
-    // Update room status
     room.status = 'Occupied';
 
-    // Add notification
     this.notifications.unshift({
       id: Date.now(),
       title: 'Room Reservation Confirmed',
@@ -409,13 +393,14 @@ class AppStore {
     });
 
     this.showToast('Reservation Confirmed', `Check-in Token: ${token}`, 'success');
-    this.setMobileScreen(9); // Booking confirmation & token screen
+    this.setMobileScreen(9);
   }
 
   purchaseWellnessPass(tier, passType, price) {
     const passCode = `CS-PASS-${Math.floor(100 + Math.random() * 900)}-${tier.substring(0, 3).toUpperCase()}`;
     const expires = new Date();
-    if (tier.includes('Daily')) expires.setHours(expires.getHours() + 24);
+    if (tier.includes('Hourly')) expires.setHours(expires.getHours() + 1);
+    else if (tier.includes('Daily')) expires.setHours(expires.getHours() + 24);
     else if (tier.includes('Monthly')) expires.setDate(expires.getDate() + 30);
     else expires.setFullYear(expires.getFullYear() + 1);
 
@@ -435,14 +420,14 @@ class AppStore {
 
     this.notifications.unshift({
       id: Date.now(),
-      title: 'Wellness Pass Activated',
-      text: `Digital QR access pass for ${passType} (${tier}) is active!`,
+      title: 'Pass Activated',
+      text: `Digital QR access pass for ${tier} (₦${price.toLocaleString()}) is active!`,
       time: 'Just now',
       type: 'pass'
     });
 
-    this.showToast('Pass Purchased', `${tier} Pass Activated!`, 'success');
-    this.setMobileScreen(20); // Pass access screen
+    this.showToast('Pass Purchased', `${tier} Activated!`, 'success');
+    this.setMobileScreen(20);
   }
 
   verifyToken(tokenCode) {
@@ -502,7 +487,7 @@ class AppStore {
     const room = this.rooms.find(r => r.id === roomId);
     if (room && newPrice > 0) {
       room.price = newPrice;
-      this.showToast('Room Price Updated', `${room.name} rate set to $${newPrice}/night`, 'success');
+      this.showToast('Room Rate Updated', `${room.name} rate set to ₦${newPrice.toLocaleString()}/night`, 'success');
       this.notify();
     }
   }
@@ -513,9 +498,9 @@ class AppStore {
 
     const toast = document.createElement('div');
     toast.className = `pointer-events-auto flex items-start gap-3 p-4 rounded-2xl border shadow-2xl transition-all duration-300 animate-fade-in ${
-      type === 'success' ? 'bg-charcoal-800 border-emerald-500/40 text-emerald-300' :
-      type === 'error' ? 'bg-charcoal-800 border-crimson/60 text-crimson-light' :
-      'bg-charcoal-800 border-white/20 text-slate-200'
+      type === 'success' ? 'bg-brandGray800 border-emerald-500/40 text-emerald-300' :
+      type === 'error' ? 'bg-brandGray800 border-brandRed/60 text-brandRedLight' :
+      'bg-brandGray800 border-brandGray700 text-brandGray200'
     }`;
 
     const icon = type === 'success' ? 'check-circle' : type === 'error' ? 'alert-triangle' : 'info';
@@ -524,9 +509,9 @@ class AppStore {
       <i data-lucide="${icon}" class="w-5 h-5 mt-0.5 flex-shrink-0"></i>
       <div class="flex-1">
         <h4 class="font-outfit font-bold text-sm text-white">${title}</h4>
-        <p class="text-xs text-slate-300 mt-0.5">${message}</p>
+        <p class="text-xs text-brandGray200 mt-0.5">${message}</p>
       </div>
-      <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white">
+      <button onclick="this.parentElement.remove()" class="text-brandGray600 hover:text-white">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
     `;
@@ -540,9 +525,9 @@ class AppStore {
   }
 
   resetDemoData() {
-    localStorage.removeItem('city_star_store');
+    localStorage.removeItem('city_star_store_naira_v2');
     this.loadState();
-    this.showToast('Demo Reset', 'All data restored to luxury default state.', 'info');
+    this.showToast('Demo Reset', 'All prices converted to Nigerian Naira (₦).', 'info');
     this.notify();
   }
 }

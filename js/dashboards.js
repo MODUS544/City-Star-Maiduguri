@@ -57,19 +57,19 @@ function renderHotelFrontDeskDashboard() {
           <div class="p-5 rounded-2xl bg-brandGray800 border border-brandGray700 space-y-3">
             <h3 class="font-outfit font-bold text-sm text-white flex items-center justify-between">
               <span>Expected Arrivals Today</span>
-              <span class="text-xs text-brandGray200 font-normal">(${bookings.length})</span>
+              <span class="text-xs text-brandGray200 font-normal">(₦{bookings.length})</span>
             </h3>
 
             <div class="space-y-3">
-              ${bookings.map(b => `
+              ₦{bookings.map(b => `
                 <div class="p-3.5 rounded-xl bg-brandGray900 border border-brandGray700 flex items-center justify-between text-xs">
                   <div>
-                    <div class="font-bold text-white">${b.guestName}</div>
-                    <div class="text-brandGray200 text-[11px]">${b.roomName}</div>
+                    <div class="font-bold text-white">₦{b.guestName}</div>
+                    <div class="text-brandGray200 text-[11px]">₦{b.roomName}</div>
                   </div>
                   <div class="text-right">
-                    <span class="px-2 py-0.5 rounded-full ${b.status === 'Checked-In' ? 'bg-brandRed/20 text-brandRedLight border border-brandRed/40' : 'bg-brandGray700 text-brandGray200'} font-bold text-[10px]">${b.status}</span>
-                    <div class="font-mono text-[10px] text-brandGray200 mt-0.5">${b.token}</div>
+                    <span class="px-2 py-0.5 rounded-full ₦{b.status === 'Checked-In' ? 'bg-brandRed/20 text-brandRedLight border border-brandRed/40' : 'bg-brandGray700 text-brandGray200'} font-bold text-[10px]">₦{b.status}</span>
+                    <div class="font-mono text-[10px] text-brandGray200 mt-0.5">₦{b.token}</div>
                   </div>
                 </div>
               `).join('')}
@@ -84,29 +84,29 @@ function renderHotelFrontDeskDashboard() {
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            ${rooms.map(room => `
-              <div class="p-5 rounded-2xl bg-brandGray800 border ${room.status === 'Occupied' ? 'border-brandRed' : 'border-brandGray700'} space-y-4 shadow-lg">
+            ₦{rooms.map(room => `
+              <div class="p-5 rounded-2xl bg-brandGray800 border ₦{room.status === 'Occupied' ? 'border-brandRed' : 'border-brandGray700'} space-y-4 shadow-lg">
                 <div class="flex justify-between items-start">
                   <div>
-                    <span class="text-[10px] font-bold text-brandGray200 uppercase tracking-wider">${room.category} • ${room.id.toUpperCase()}</span>
-                    <h3 class="font-outfit font-bold text-base text-white">${room.name}</h3>
+                    <span class="text-[10px] font-bold text-brandGray200 uppercase tracking-wider">₦{room.category} • ₦{room.id.toUpperCase()}</span>
+                    <h3 class="font-outfit font-bold text-base text-white">₦{room.name}</h3>
                   </div>
-                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${
+                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ₦{
                     room.status === 'Occupied' ? 'bg-brandRed/20 text-brandRedLight border border-brandRed/40' :
                     'bg-brandGray700 text-brandGray200'
                   }">
-                    ${room.status}
+                    ₦{room.status}
                   </span>
                 </div>
 
                 <div class="pt-2 border-t border-brandGray700 flex gap-2">
                   <button onclick="
-                    const r = appStore.rooms.find(x => x.id === '${room.id}');
+                    const r = appStore.rooms.find(x => x.id === '₦{room.id}');
                     if(r) { r.status = 'Available'; appStore.notify(); }
                   " class="flex-1 py-1.5 rounded-lg bg-brandGray900 text-[10px] font-bold text-brandGray200 border border-brandGray700">Set Available</button>
 
                   <button onclick="
-                    const r = appStore.rooms.find(x => x.id === '${room.id}');
+                    const r = appStore.rooms.find(x => x.id === '₦{room.id}');
                     if(r) { r.status = 'Occupied'; appStore.notify(); }
                   " class="flex-1 py-1.5 rounded-lg bg-brandRed text-[10px] font-bold text-white">Set Occupied</button>
                 </div>
@@ -140,20 +140,20 @@ function renderKitchenKDSDashboard() {
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        ${orders.map(ord => `
+        ₦{orders.map(ord => `
           <div class="p-5 rounded-2xl bg-brandGray800 border-2 border-brandRed/50 space-y-4 shadow-xl">
             <div class="flex items-center justify-between border-b border-brandGray700 pb-3">
               <div>
-                <span class="font-mono text-xs font-black text-brandRedLight">#${ord.id}</span>
-                <h3 class="font-outfit font-bold text-sm text-white">${ord.guestName}</h3>
+                <span class="font-mono text-xs font-black text-brandRedLight">#₦{ord.id}</span>
+                <h3 class="font-outfit font-bold text-sm text-white">₦{ord.guestName}</h3>
               </div>
-              <span class="px-2 py-1 rounded bg-brandMaroon text-brandRedLight text-[10px] font-bold">${ord.status}</span>
+              <span class="px-2 py-1 rounded bg-brandMaroon text-brandRedLight text-[10px] font-bold">₦{ord.status}</span>
             </div>
 
             <div class="grid grid-cols-3 gap-1.5 pt-2">
-              <button onclick="appStore.updateOrderStatus('${ord.id}', 'Preparing')" class="py-2 rounded-lg ${ord.status === 'Preparing' ? 'bg-brandRed text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Preparing</button>
-              <button onclick="appStore.updateOrderStatus('${ord.id}', 'Ready')" class="py-2 rounded-lg ${ord.status === 'Ready' ? 'bg-brandMaroon text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Ready</button>
-              <button onclick="appStore.updateOrderStatus('${ord.id}', 'Dispatched')" class="py-2 rounded-lg ${ord.status === 'Dispatched' ? 'bg-brandRedDark text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Dispatched</button>
+              <button onclick="appStore.updateOrderStatus('₦{ord.id}', 'Preparing')" class="py-2 rounded-lg ₦{ord.status === 'Preparing' ? 'bg-brandRed text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Preparing</button>
+              <button onclick="appStore.updateOrderStatus('₦{ord.id}', 'Ready')" class="py-2 rounded-lg ₦{ord.status === 'Ready' ? 'bg-brandMaroon text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Ready</button>
+              <button onclick="appStore.updateOrderStatus('₦{ord.id}', 'Dispatched')" class="py-2 rounded-lg ₦{ord.status === 'Dispatched' ? 'bg-brandRedDark text-white font-bold' : 'bg-brandGray900 text-brandGray200'} text-[10px]">Dispatched</button>
             </div>
           </div>
         `).join('')}
@@ -183,7 +183,7 @@ function renderPoolGymScannerDashboard() {
         <div class="p-6 rounded-2xl bg-brandGray800 border border-brandGray700 space-y-4">
           <div class="flex gap-2">
             <button onclick="
-              const result = appStore.scanQRCode('${passes[0] ? passes[0].qrCode : 'CS-PASS-771-VIP'}');
+              const result = appStore.scanQRCode('₦{passes[0] ? passes[0].qrCode : 'CS-PASS-771-VIP'}');
               window.lastScanResult = result;
               appStore.notify();
             " class="flex-1 py-3 rounded-xl bg-brandRed text-white text-xs font-bold">
@@ -191,7 +191,7 @@ function renderPoolGymScannerDashboard() {
             </button>
 
             <button onclick="
-              const result = appStore.scanQRCode('${passes[1] ? passes[1].qrCode : 'CS-PASS-772-POOL'}');
+              const result = appStore.scanQRCode('₦{passes[1] ? passes[1].qrCode : 'CS-PASS-772-POOL'}');
               window.lastScanResult = result;
               appStore.notify();
             " class="flex-1 py-3 rounded-xl bg-brandMaroon text-brandRedLight text-xs font-bold border border-brandRed/40">
@@ -201,16 +201,16 @@ function renderPoolGymScannerDashboard() {
         </div>
 
         <div>
-          ${window.lastScanResult ? (
+          ₦{window.lastScanResult ? (
             window.lastScanResult.valid ? `
               <div class="p-8 rounded-3xl bg-brandMaroonDark border-4 border-brandRed text-center space-y-4 glow-red">
                 <h3 class="font-outfit font-black text-2xl text-white">ACCESS GRANTED</h3>
-                <p class="text-xs text-brandRedLight">Guest: ${window.lastScanResult.pass.guestName} (${window.lastScanResult.pass.tier})</p>
+                <p class="text-xs text-brandRedLight">Guest: ₦{window.lastScanResult.pass.guestName} (₦{window.lastScanResult.pass.tier})</p>
               </div>
             ` : `
               <div class="p-8 rounded-3xl bg-brandGray800 border-4 border-brandGray700 text-center space-y-4">
                 <h3 class="font-outfit font-black text-2xl text-white">ACCESS DENIED</h3>
-                <p class="text-xs text-brandGray200">${window.lastScanResult.reason}</p>
+                <p class="text-xs text-brandGray200">₦{window.lastScanResult.reason}</p>
               </div>
             `
           ) : `<div class="p-8 rounded-3xl bg-brandGray800 border border-brandGray700 text-center text-xs text-brandGray200">Ready to scan guest pass...</div>`}
@@ -232,7 +232,7 @@ function renderSuperAdminDashboard() {
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div class="p-5 rounded-2xl bg-brandGray800 border border-brandGray700 space-y-1">
           <div class="text-[10px] text-brandGray200 font-bold uppercase">Total Revenue</div>
-          <div class="font-outfit font-black text-2xl text-brandRedLight">$18,450</div>
+          <div class="font-outfit font-black text-2xl text-brandRedLight">₦18,450</div>
         </div>
       </div>
     </div>

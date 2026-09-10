@@ -13,48 +13,48 @@ function renderMobileShell() {
       <div class="max-w-4xl mx-auto p-3 rounded-2xl bg-brandGray800 border border-brandGray700 flex flex-wrap items-center justify-between gap-3 shadow-xl">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-brandRedLight animate-pulse"></span>
-          <span class="text-xs font-bold text-white uppercase tracking-wider">Screen ${currentScreen} / 20</span>
+          <span class="text-xs font-bold text-white uppercase tracking-wider">Screen ₦{currentScreen} / 20</span>
         </div>
 
         <div class="flex items-center gap-3">
           <!-- Dropdown Screen Selector -->
           <select onchange="appStore.setMobileScreen(parseInt(this.value))" class="bg-brandGray900 text-white text-xs font-semibold py-1.5 px-3 rounded-xl border border-brandGray700 focus:outline-none focus:border-brandRed">
             <optgroup label="Main Flow (1-3)">
-              <option value="1" ${currentScreen === 1 ? 'selected' : ''}>1. Welcome / Home Screen</option>
-              <option value="2" ${currentScreen === 2 ? 'selected' : ''}>2. User Profile & Active Tokens</option>
-              <option value="3" ${currentScreen === 3 ? 'selected' : ''}>3. Global Notifications</option>
+              <option value="1" ₦{currentScreen === 1 ? 'selected' : ''}>1. Welcome / Home Screen</option>
+              <option value="2" ₦{currentScreen === 2 ? 'selected' : ''}>2. User Profile & Active Tokens</option>
+              <option value="3" ₦{currentScreen === 3 ? 'selected' : ''}>3. Global Notifications</option>
             </optgroup>
             <optgroup label="Hotel Module (4-9)">
-              <option value="4" ${currentScreen === 4 ? 'selected' : ''}>4. Hotel Landing & Search</option>
-              <option value="5" ${currentScreen === 5 ? 'selected' : ''}>5. Room Listing & Category Filters</option>
-              <option value="6" ${currentScreen === 6 ? 'selected' : ''}>6. Room Details & 360° View</option>
-              <option value="7" ${currentScreen === 7 ? 'selected' : ''}>7. Add-Ons & Requests</option>
-              <option value="8" ${currentScreen === 8 ? 'selected' : ''}>8. Hotel Checkout & Card Payment</option>
-              <option value="9" ${currentScreen === 9 ? 'selected' : ''}>9. Check-In Token Screen</option>
+              <option value="4" ₦{currentScreen === 4 ? 'selected' : ''}>4. Hotel Landing & Search</option>
+              <option value="5" ₦{currentScreen === 5 ? 'selected' : ''}>5. Room Listing & Category Filters</option>
+              <option value="6" ₦{currentScreen === 6 ? 'selected' : ''}>6. Room Details & 360° View</option>
+              <option value="7" ₦{currentScreen === 7 ? 'selected' : ''}>7. Add-Ons & Requests</option>
+              <option value="8" ₦{currentScreen === 8 ? 'selected' : ''}>8. Hotel Checkout & Card Payment</option>
+              <option value="9" ₦{currentScreen === 9 ? 'selected' : ''}>9. Check-In Token Screen</option>
             </optgroup>
             <optgroup label="Restaurant Module (10-16)">
-              <option value="10" ${currentScreen === 10 ? 'selected' : ''}>10. Restaurant Main Menu</option>
-              <option value="11" ${currentScreen === 11 ? 'selected' : ''}>11. Food Customization Modal</option>
-              <option value="12" ${currentScreen === 12 ? 'selected' : ''}>12. Cellar Wines & Beverages</option>
-              <option value="13" ${currentScreen === 13 ? 'selected' : ''}>13. Dining Cart Summary</option>
-              <option value="14" ${currentScreen === 14 ? 'selected' : ''}>14. Delivery Address & Notes</option>
-              <option value="15" ${currentScreen === 15 ? 'selected' : ''}>15. Dining Payment & Room Bill</option>
-              <option value="16" ${currentScreen === 16 ? 'selected' : ''}>16. Order Status & KDS Live Tracker</option>
+              <option value="10" ₦{currentScreen === 10 ? 'selected' : ''}>10. Restaurant Main Menu</option>
+              <option value="11" ₦{currentScreen === 11 ? 'selected' : ''}>11. Food Customization Modal</option>
+              <option value="12" ₦{currentScreen === 12 ? 'selected' : ''}>12. Cellar Wines & Beverages</option>
+              <option value="13" ₦{currentScreen === 13 ? 'selected' : ''}>13. Dining Cart Summary</option>
+              <option value="14" ₦{currentScreen === 14 ? 'selected' : ''}>14. Delivery Address & Notes</option>
+              <option value="15" ₦{currentScreen === 15 ? 'selected' : ''}>15. Dining Payment & Room Bill</option>
+              <option value="16" ₦{currentScreen === 16 ? 'selected' : ''}>16. Order Status & KDS Live Tracker</option>
             </optgroup>
             <optgroup label="Wellness Module (17-20)">
-              <option value="17" ${currentScreen === 17 ? 'selected' : ''}>17. Wellness & Pool Landing</option>
-              <option value="18" ${currentScreen === 18 ? 'selected' : ''}>18. Pass Selection & Tiers</option>
-              <option value="19" ${currentScreen === 19 ? 'selected' : ''}>19. Wellness Pass Checkout</option>
-              <option value="20" ${currentScreen === 20 ? 'selected' : ''}>20. Pass Digital Access QR Code</option>
+              <option value="17" ₦{currentScreen === 17 ? 'selected' : ''}>17. Wellness & Pool Landing</option>
+              <option value="18" ₦{currentScreen === 18 ? 'selected' : ''}>18. Pass Selection & Tiers</option>
+              <option value="19" ₦{currentScreen === 19 ? 'selected' : ''}>19. Wellness Pass Checkout</option>
+              <option value="20" ₦{currentScreen === 20 ? 'selected' : ''}>20. Pass Digital Access QR Code</option>
             </optgroup>
           </select>
 
           <!-- Toggle View Mode -->
           <div class="flex items-center gap-1 bg-brandGray900 p-1 rounded-xl border border-brandGray700">
-            <button onclick="window.mobileFullWidthMode = false; appStore.notify();" class="px-2.5 py-1 rounded-lg text-xs font-bold ${!isFullWidth ? 'bg-brandRed text-white' : 'text-brandGray600 hover:text-white'}">
+            <button onclick="window.mobileFullWidthMode = false; appStore.notify();" class="px-2.5 py-1 rounded-lg text-xs font-bold ₦{!isFullWidth ? 'bg-brandRed text-white' : 'text-brandGray600 hover:text-white'}">
               📱 Phone View
             </button>
-            <button onclick="window.mobileFullWidthMode = true; appStore.notify();" class="px-2.5 py-1 rounded-lg text-xs font-bold ${isFullWidth ? 'bg-brandRed text-white' : 'text-brandGray600 hover:text-white'}">
+            <button onclick="window.mobileFullWidthMode = true; appStore.notify();" class="px-2.5 py-1 rounded-lg text-xs font-bold ₦{isFullWidth ? 'bg-brandRed text-white' : 'text-brandGray600 hover:text-white'}">
               🖥️ Full Canvas
             </button>
           </div>
@@ -62,9 +62,9 @@ function renderMobileShell() {
       </div>
 
       <!-- Container Body -->
-      ${isFullWidth ? `
+      ₦{isFullWidth ? `
         <div class="max-w-4xl mx-auto p-6 bg-brandGray800 border border-brandGray700 rounded-3xl shadow-2xl space-y-6">
-          ${renderScreenContent(currentScreen)}
+          ₦{renderScreenContent(currentScreen)}
         </div>
       ` : `
         <div class="mobile-device-container">
@@ -85,27 +85,27 @@ function renderMobileShell() {
               </div>
 
               <div class="screen-scrollable">
-                ${renderScreenContent(currentScreen)}
+                ₦{renderScreenContent(currentScreen)}
               </div>
 
               <div class="mobile-bottom-nav">
-                <button onclick="appStore.setMobileScreen(1)" class="nav-tab-btn ${[1, 4, 10, 17].includes(currentScreen) ? 'active' : ''}">
+                <button onclick="appStore.setMobileScreen(1)" class="nav-tab-btn ₦{[1, 4, 10, 17].includes(currentScreen) ? 'active' : ''}">
                   <i data-lucide="home" class="w-5 h-5"></i>
                   <span>Home</span>
                 </button>
-                <button onclick="appStore.setMobileScreen(5)" class="nav-tab-btn ${[5, 6, 7, 8, 9].includes(currentScreen) ? 'active' : ''}">
+                <button onclick="appStore.setMobileScreen(5)" class="nav-tab-btn ₦{[5, 6, 7, 8, 9].includes(currentScreen) ? 'active' : ''}">
                   <i data-lucide="hotel" class="w-5 h-5"></i>
                   <span>Stay</span>
                 </button>
-                <button onclick="appStore.setMobileScreen(10)" class="nav-tab-btn ${[10, 11, 12, 13, 14, 15, 16].includes(currentScreen) ? 'active' : ''}">
+                <button onclick="appStore.setMobileScreen(10)" class="nav-tab-btn ₦{[10, 11, 12, 13, 14, 15, 16].includes(currentScreen) ? 'active' : ''}">
                   <i data-lucide="utensils" class="w-5 h-5"></i>
                   <span>Dine</span>
                 </button>
-                <button onclick="appStore.setMobileScreen(17)" class="nav-tab-btn ${[17, 18, 19, 20].includes(currentScreen) ? 'active' : ''}">
+                <button onclick="appStore.setMobileScreen(17)" class="nav-tab-btn ₦{[17, 18, 19, 20].includes(currentScreen) ? 'active' : ''}">
                   <i data-lucide="waves" class="w-5 h-5"></i>
                   <span>Wellness</span>
                 </button>
-                <button onclick="appStore.setMobileScreen(2)" class="nav-tab-btn ${[2, 3].includes(currentScreen) ? 'active' : ''}">
+                <button onclick="appStore.setMobileScreen(2)" class="nav-tab-btn ₦{[2, 3].includes(currentScreen) ? 'active' : ''}">
                   <i data-lucide="user" class="w-5 h-5"></i>
                   <span>Profile</span>
                 </button>
@@ -260,11 +260,11 @@ function renderProfileScreen() {
         <div class="flex items-center justify-between bg-brandGray900 p-3 rounded-xl border border-brandGray700">
           <div>
             <div class="text-[11px] text-brandGray200">Guest Room</div>
-            <div class="text-xs font-bold text-white">${activeBooking ? activeBooking.roomName : 'Presidential Suite'}</div>
+            <div class="text-xs font-bold text-white">₦{activeBooking ? activeBooking.roomName : 'Presidential Suite'}</div>
           </div>
           <div class="text-right">
             <div class="text-[10px] text-brandGray200">6-Digit Code</div>
-            <div class="font-mono text-lg font-black text-brandRedLight tracking-widest">${activeBooking ? activeBooking.token : 'CS-7892'}</div>
+            <div class="font-mono text-lg font-black text-brandRedLight tracking-widest">₦{activeBooking ? activeBooking.token : 'CS-7892'}</div>
           </div>
         </div>
       </div>
@@ -285,14 +285,14 @@ function renderNotificationsScreen() {
       </div>
 
       <div class="space-y-3">
-        ${notifs.map(n => `
+        ₦{notifs.map(n => `
           <div class="p-4 rounded-2xl bg-brandGray800 border border-brandGray700 flex items-start gap-3">
             <div class="w-8 h-8 rounded-xl bg-brandMaroon text-brandRedLight flex items-center justify-center flex-shrink-0 mt-0.5 border border-brandRed/30">
               <i data-lucide="bell" class="w-4 h-4"></i>
             </div>
             <div class="flex-1">
-              <h4 class="font-outfit font-bold text-xs text-white">${n.title}</h4>
-              <p class="text-xs text-brandGray200 mt-1">${n.text}</p>
+              <h4 class="font-outfit font-bold text-xs text-white">₦{n.title}</h4>
+              <p class="text-xs text-brandGray200 mt-1">₦{n.text}</p>
             </div>
           </div>
         `).join('')}
@@ -338,13 +338,13 @@ function renderRoomListingScreen() {
       </div>
 
       <div class="space-y-4">
-        ${rooms.map(room => `
-          <div onclick="appStore.selectRoom('${room.id}')" class="rounded-2xl bg-brandGray800 border border-brandGray700 overflow-hidden cursor-pointer hover:border-brandRed transition-all">
-            <img src="${room.image}" class="w-full h-40 object-cover">
+        ₦{rooms.map(room => `
+          <div onclick="appStore.selectRoom('₦{room.id}')" class="rounded-2xl bg-brandGray800 border border-brandGray700 overflow-hidden cursor-pointer hover:border-brandRed transition-all">
+            <img src="₦{room.image}" class="w-full h-40 object-cover">
             <div class="p-4 flex items-center justify-between">
               <div>
-                <h3 class="font-outfit font-bold text-sm text-white">${room.name}</h3>
-                <p class="text-xs text-brandGray200">$${room.price} / night</p>
+                <h3 class="font-outfit font-bold text-sm text-white">₦{room.name}</h3>
+                <p class="text-xs text-brandGray200">₦₦{room.price} / night</p>
               </div>
               <button class="px-3 py-1.5 rounded-xl bg-brandRed text-white text-xs font-bold">Select</button>
             </div>
@@ -364,10 +364,10 @@ function renderRoomDetailsScreen() {
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
       </button>
 
-      <img src="${room.image}" class="w-full h-48 rounded-2xl object-cover">
-      <h2 class="font-outfit font-bold text-lg text-white">${room.name}</h2>
-      <p class="text-xs text-brandGray200">${room.description}</p>
-      <div class="text-lg font-black text-brandRedLight">$${room.price} / night</div>
+      <img src="₦{room.image}" class="w-full h-48 rounded-2xl object-cover">
+      <h2 class="font-outfit font-bold text-lg text-white">₦{room.name}</h2>
+      <p class="text-xs text-brandGray200">₦{room.description}</p>
+      <div class="text-lg font-black text-brandRedLight">₦₦{room.price} / night</div>
 
       <button onclick="appStore.setMobileScreen(7)" class="w-full py-4 rounded-xl bg-brandRed text-white font-bold text-xs uppercase tracking-wider">
         Proceed to Add-Ons
@@ -392,7 +392,7 @@ function renderAddOnsScreen() {
             <div class="font-bold text-white">Breakfast Buffet</div>
             <div class="text-brandGray200">Daily international spread</div>
           </div>
-          <span class="text-brandRedLight font-bold">+$35 / day</span>
+          <span class="text-brandRedLight font-bold">+₦35 / day</span>
         </div>
       </div>
 
@@ -431,8 +431,8 @@ function renderBookingConfirmationScreen() {
       <h2 class="font-outfit font-black text-xl text-white">Booking Confirmed!</h2>
       <div class="p-6 rounded-3xl bg-brandGray800 border-2 border-brandRed space-y-3">
         <span class="text-xs font-bold text-brandRedLight uppercase">FRONT DESK TOKEN</span>
-        <div class="font-mono text-3xl font-black text-white">${b.token}</div>
-        <div class="text-xs text-brandGray200">${b.roomName}</div>
+        <div class="font-mono text-3xl font-black text-white">₦{b.token}</div>
+        <div class="text-xs text-brandGray200">₦{b.roomName}</div>
       </div>
     </div>
   `;
@@ -459,16 +459,16 @@ function renderRestaurantMainScreen() {
       </div>
 
       <div class="space-y-3">
-        ${menu.map(item => `
-          <div onclick="appStore.selectFood('${item.id}')" class="p-3 rounded-2xl bg-brandGray800 border border-brandGray700 flex gap-3 cursor-pointer hover:border-brandRed transition-all">
-            <img src="${item.image}" class="w-20 h-20 rounded-xl object-cover">
+        ₦{menu.map(item => `
+          <div onclick="appStore.selectFood('₦{item.id}')" class="p-3 rounded-2xl bg-brandGray800 border border-brandGray700 flex gap-3 cursor-pointer hover:border-brandRed transition-all">
+            <img src="₦{item.image}" class="w-20 h-20 rounded-xl object-cover">
             <div class="flex-1 flex flex-col justify-between">
               <div>
-                <h3 class="font-outfit font-bold text-xs text-white">${item.name}</h3>
-                <p class="text-[10px] text-brandGray200 mt-1 leading-tight">${item.description}</p>
+                <h3 class="font-outfit font-bold text-xs text-white">₦{item.name}</h3>
+                <p class="text-[10px] text-brandGray200 mt-1 leading-tight">₦{item.description}</p>
               </div>
               <div class="flex justify-between items-center pt-1">
-                <span class="font-outfit font-bold text-xs text-brandRedLight">$${item.price}</span>
+                <span class="font-outfit font-bold text-xs text-brandRedLight">₦₦{item.price}</span>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-brandRed/20 text-brandRedLight">Customize</span>
               </div>
             </div>
@@ -491,14 +491,14 @@ function renderFoodDetailsModal() {
         <span class="text-xs text-brandRedLight font-bold">Food Details & Customization</span>
       </div>
 
-      <img src="${food.image}" class="w-full h-48 rounded-2xl object-cover">
+      <img src="₦{food.image}" class="w-full h-48 rounded-2xl object-cover">
 
       <div>
         <div class="flex justify-between items-center">
-          <h2 class="font-outfit font-bold text-base text-white">${food.name}</h2>
-          <span class="font-outfit font-bold text-base text-brandRedLight">$${food.price}</span>
+          <h2 class="font-outfit font-bold text-base text-white">₦{food.name}</h2>
+          <span class="font-outfit font-bold text-base text-brandRedLight">₦₦{food.price}</span>
         </div>
-        <p class="text-xs text-brandGray200 mt-1">${food.description}</p>
+        <p class="text-xs text-brandGray200 mt-1">₦{food.description}</p>
       </div>
 
       <div class="space-y-2">
@@ -514,9 +514,9 @@ function renderFoodDetailsModal() {
         <input type="text" placeholder="e.g. Medium rare, sauce on side..." class="w-full p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">
       </div>
 
-      <button onclick="appStore.addToCart({ foodId: '${food.id}', name: '${food.name}', price: ${food.price}, quantity: 1, size: 'Standard' }); appStore.setMobileScreen(13);" class="w-full py-4 rounded-xl bg-brandRed text-white font-bold text-xs uppercase shadow-lg shadow-brandRed/30 flex items-center justify-center gap-2">
+      <button onclick="appStore.addToCart({ foodId: '₦{food.id}', name: '₦{food.name}', price: ₦{food.price}, quantity: 1, size: 'Standard' }); appStore.setMobileScreen(13);" class="w-full py-4 rounded-xl bg-brandRed text-white font-bold text-xs uppercase shadow-lg shadow-brandRed/30 flex items-center justify-center gap-2">
         <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-        Add to Dining Cart ($${food.price})
+        Add to Dining Cart (₦₦{food.price})
       </button>
     </div>
   `;
@@ -535,17 +535,17 @@ function renderDrinksScreen() {
       </div>
 
       <div class="space-y-3">
-        ${drinks.map(d => `
+        ₦{drinks.map(d => `
           <div class="p-3.5 rounded-2xl bg-brandGray800 border border-brandGray700 flex gap-3">
-            <img src="${d.image}" class="w-20 h-20 rounded-xl object-cover">
+            <img src="₦{d.image}" class="w-20 h-20 rounded-xl object-cover">
             <div class="flex-1 flex flex-col justify-between">
               <div>
-                <h3 class="font-outfit font-bold text-xs text-white">${d.name}</h3>
-                <p class="text-[10px] text-brandGray200 mt-0.5">${d.description}</p>
+                <h3 class="font-outfit font-bold text-xs text-white">₦{d.name}</h3>
+                <p class="text-[10px] text-brandGray200 mt-0.5">₦{d.description}</p>
               </div>
               <div class="flex justify-between items-center pt-1">
-                <span class="font-outfit font-bold text-xs text-brandRedLight">$${d.price}</span>
-                <button onclick="appStore.addToCart({ foodId: '${d.id}', name: '${d.name}', price: ${d.price}, quantity: 1, size: 'Standard' }); appStore.setMobileScreen(13);" class="px-3 py-1 rounded-lg bg-brandRed text-white text-[10px] font-bold">Add to Order</button>
+                <span class="font-outfit font-bold text-xs text-brandRedLight">₦₦{d.price}</span>
+                <button onclick="appStore.addToCart({ foodId: '₦{d.id}', name: '₦{d.name}', price: ₦{d.price}, quantity: 1, size: 'Standard' }); appStore.setMobileScreen(13);" class="px-3 py-1 rounded-lg bg-brandRed text-white text-[10px] font-bold">Add to Order</button>
               </div>
             </div>
           </div>
@@ -566,39 +566,39 @@ function renderCartScreen() {
         <button onclick="appStore.setMobileScreen(10)" class="p-1.5 rounded-lg bg-brandGray800 text-white border border-brandGray700">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
-        <h2 class="font-outfit font-bold text-sm text-white">Dining Cart (${cart.length})</h2>
+        <h2 class="font-outfit font-bold text-sm text-white">Dining Cart (₦{cart.length})</h2>
       </div>
 
       <div class="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-brandGray800 border border-brandGray700 text-xs">
-        <button onclick="appStore.cartServiceType = 'Room Delivery'; appStore.notify();" class="py-2.5 rounded-xl font-bold ${appStore.cartServiceType === 'Room Delivery' ? 'bg-brandRed text-white' : 'text-brandGray200'}">Room Service</button>
-        <button onclick="appStore.cartServiceType = 'Dine-In'; appStore.notify();" class="py-2.5 rounded-xl font-bold ${appStore.cartServiceType === 'Dine-In' ? 'bg-brandRed text-white' : 'text-brandGray200'}">Dine-In Table</button>
+        <button onclick="appStore.cartServiceType = 'Room Delivery'; appStore.notify();" class="py-2.5 rounded-xl font-bold ₦{appStore.cartServiceType === 'Room Delivery' ? 'bg-brandRed text-white' : 'text-brandGray200'}">Room Service</button>
+        <button onclick="appStore.cartServiceType = 'Dine-In'; appStore.notify();" class="py-2.5 rounded-xl font-bold ₦{appStore.cartServiceType === 'Dine-In' ? 'bg-brandRed text-white' : 'text-brandGray200'}">Dine-In Table</button>
       </div>
 
       <div class="space-y-3">
-        ${cart.length === 0 ? `<div class="py-12 text-center text-brandGray200 text-xs">Your cart is empty.</div>` : cart.map((item, idx) => `
+        ₦{cart.length === 0 ? `<div class="py-12 text-center text-brandGray200 text-xs">Your cart is empty.</div>` : cart.map((item, idx) => `
           <div class="p-3.5 rounded-2xl bg-brandGray800 border border-brandGray700 flex justify-between items-center">
             <div>
-              <h4 class="font-outfit font-bold text-xs text-white">${item.name}</h4>
-              <div class="text-[10px] text-brandGray200">$${item.price} each</div>
+              <h4 class="font-outfit font-bold text-xs text-white">₦{item.name}</h4>
+              <div class="text-[10px] text-brandGray200">₦₦{item.price} each</div>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="appStore.updateCartQuantity(${idx}, -1)" class="w-7 h-7 bg-brandGray900 text-white rounded-lg">-</button>
-              <span class="font-bold text-xs text-white w-4 text-center">${item.quantity}</span>
-              <button onclick="appStore.updateCartQuantity(${idx}, 1)" class="w-7 h-7 bg-brandRed text-white rounded-lg">+</button>
+              <button onclick="appStore.updateCartQuantity(₦{idx}, -1)" class="w-7 h-7 bg-brandGray900 text-white rounded-lg">-</button>
+              <span class="font-bold text-xs text-white w-4 text-center">₦{item.quantity}</span>
+              <button onclick="appStore.updateCartQuantity(₦{idx}, 1)" class="w-7 h-7 bg-brandRed text-white rounded-lg">+</button>
             </div>
           </div>
         `).join('')}
       </div>
 
-      ${cart.length > 0 ? `
+      ₦{cart.length > 0 ? `
         <div class="p-4 rounded-2xl bg-brandGray800 border border-brandGray700 space-y-2 text-xs">
           <div class="flex justify-between text-brandGray200">
             <span>Subtotal</span>
-            <span>$${subtotal}</span>
+            <span>₦₦{subtotal}</span>
           </div>
           <div class="flex justify-between text-white font-bold text-sm pt-2 border-t border-brandGray700">
             <span>Total Amount</span>
-            <span class="text-brandRedLight font-outfit text-base">$${subtotal + Math.round(subtotal * 0.08)}</span>
+            <span class="text-brandRedLight font-outfit text-base">₦₦{subtotal + Math.round(subtotal * 0.08)}</span>
           </div>
         </div>
 
@@ -625,17 +625,17 @@ function renderDeliveryInstructionsScreen() {
       <div class="space-y-3">
         <div class="space-y-1">
           <label class="text-[10px] font-bold text-brandGray200 uppercase">Room Number / Address</label>
-          <input type="text" value="${appStore.cartDeliveryInfo.address}" class="w-full p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">
+          <input type="text" value="₦{appStore.cartDeliveryInfo.address}" class="w-full p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">
         </div>
 
         <div class="space-y-1">
           <label class="text-[10px] font-bold text-brandGray200 uppercase">Contact Phone</label>
-          <input type="text" value="${appStore.cartDeliveryInfo.phone}" class="w-full p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">
+          <input type="text" value="₦{appStore.cartDeliveryInfo.phone}" class="w-full p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">
         </div>
 
         <div class="space-y-1">
           <label class="text-[10px] font-bold text-brandGray200 uppercase">Delivery Instructions</label>
-          <textarea class="w-full h-20 p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">${appStore.cartDeliveryInfo.notes}</textarea>
+          <textarea class="w-full h-20 p-3 rounded-xl bg-brandGray900 border border-brandGray700 text-xs text-white">₦{appStore.cartDeliveryInfo.notes}</textarea>
         </div>
       </div>
 
@@ -705,8 +705,8 @@ function renderOrderStatusScreen() {
 
       <div class="p-5 rounded-2xl bg-brandGray800 border border-brandGray700 text-center space-y-2">
         <div class="text-[10px] text-brandGray200 font-bold uppercase">Estimated Delivery Timer</div>
-        <div class="font-mono font-black text-3xl text-brandRedLight animate-pulse">${ord.prepTimer}</div>
-        <div class="text-xs text-white font-semibold">Order #${ord.id} • ${ord.serviceType}</div>
+        <div class="font-mono font-black text-3xl text-brandRedLight animate-pulse">₦{ord.prepTimer}</div>
+        <div class="text-xs text-white font-semibold">Order #₦{ord.id} • ₦{ord.serviceType}</div>
       </div>
 
       <div class="space-y-4 px-2">
@@ -719,8 +719,8 @@ function renderOrderStatusScreen() {
         </div>
 
         <div class="flex items-start gap-3">
-          <div class="w-6 h-6 rounded-full ${['Preparing', 'Ready', 'Dispatched'].includes(ord.status) ? 'bg-brandRed text-white' : 'bg-brandGray700 text-brandGray600'} flex items-center justify-center text-xs font-bold">
-            ${['Preparing', 'Ready', 'Dispatched'].includes(ord.status) ? '✓' : '2'}
+          <div class="w-6 h-6 rounded-full ₦{['Preparing', 'Ready', 'Dispatched'].includes(ord.status) ? 'bg-brandRed text-white' : 'bg-brandGray700 text-brandGray600'} flex items-center justify-center text-xs font-bold">
+            ₦{['Preparing', 'Ready', 'Dispatched'].includes(ord.status) ? '✓' : '2'}
           </div>
           <div>
             <div class="text-xs font-bold text-white">Kitchen Preparing</div>
@@ -729,8 +729,8 @@ function renderOrderStatusScreen() {
         </div>
 
         <div class="flex items-start gap-3">
-          <div class="w-6 h-6 rounded-full ${['Ready', 'Dispatched'].includes(ord.status) ? 'bg-brandRed text-white' : 'bg-brandGray700 text-brandGray600'} flex items-center justify-center text-xs font-bold">
-            ${['Ready', 'Dispatched'].includes(ord.status) ? '✓' : '3'}
+          <div class="w-6 h-6 rounded-full ₦{['Ready', 'Dispatched'].includes(ord.status) ? 'bg-brandRed text-white' : 'bg-brandGray700 text-brandGray600'} flex items-center justify-center text-xs font-bold">
+            ₦{['Ready', 'Dispatched'].includes(ord.status) ? '✓' : '3'}
           </div>
           <div>
             <div class="text-xs font-bold text-white">Out for Delivery / Ready</div>
@@ -793,24 +793,36 @@ function renderPassSelectionScreen() {
         <h2 class="font-serif font-bold text-base text-white">Select Access Pass</h2>
       </div>
 
-      <div class="space-y-4 z-10 my-auto py-4">
-        <!-- Daily Pass -->
-        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandGray800/90 backdrop-blur-xl border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-xl hover:scale-[1.01] transition-all">
-          <div class="space-y-1">
-            <div class="font-outfit font-bold text-base text-white">Daily Pass</div>
-            <div class="text-xs text-brandGray200">24-Hour full facility access</div>
+      <div class="space-y-3 z-10 my-auto py-4">
+        <!-- Hourly Pass (5 Thousand Naira) -->
+        <div onclick="appStore.selectedPassTier = 'Hourly Pass'; appStore.setMobileScreen(19);" class="p-4 rounded-2xl bg-brandGray800/95 backdrop-blur-xl border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-xl hover:scale-[1.01] transition-all">
+          <div class="space-y-0.5">
+            <div class="font-outfit font-bold text-sm text-white flex items-center gap-2">
+              <span>Hourly Pass</span>
+              <span class="px-2 py-0.5 rounded bg-brandRed/20 text-brandRedLight text-[9px]">1 Hour</span>
+            </div>
+            <div class="text-[11px] text-brandGray200">1-Hour quick pool & facility access</div>
           </div>
-          <span class="font-outfit font-black text-xl text-brandRedLight">$45</span>
+          <span class="font-outfit font-black text-lg text-brandRedLight">₦5,000</span>
+        </div>
+
+        <!-- Daily Pass -->
+        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-4 rounded-2xl bg-brandGray800/95 backdrop-blur-xl border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-xl hover:scale-[1.01] transition-all">
+          <div class="space-y-0.5">
+            <div class="font-outfit font-bold text-sm text-white">Daily Pass</div>
+            <div class="text-[11px] text-brandGray200">24-Hour full facility access</div>
+          </div>
+          <span class="font-outfit font-black text-lg text-brandRedLight">₦25,000</span>
         </div>
 
         <!-- Monthly VIP Combo Pass -->
-        <div onclick="appStore.selectedPassTier = 'Monthly VIP Combo Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandMaroonDark/95 backdrop-blur-xl border-2 border-brandRed cursor-pointer flex justify-between items-center shadow-2xl hover:scale-[1.01] transition-all relative">
+        <div onclick="appStore.selectedPassTier = 'Monthly VIP Combo Pass'; appStore.setMobileScreen(19);" class="p-4 rounded-2xl bg-brandMaroonDark/95 backdrop-blur-xl border-2 border-brandRed cursor-pointer flex justify-between items-center shadow-2xl hover:scale-[1.01] transition-all relative">
           <span class="absolute -top-2.5 right-4 px-2.5 py-0.5 rounded-full bg-brandRed text-[9px] font-bold text-white uppercase tracking-wider">Most Popular</span>
-          <div class="space-y-1">
-            <div class="font-outfit font-bold text-base text-white">Monthly VIP Combo Pass</div>
-            <div class="text-xs text-brandGray200">30-Day unlimited access</div>
+          <div class="space-y-0.5">
+            <div class="font-outfit font-bold text-sm text-white">Monthly VIP Combo Pass</div>
+            <div class="text-[11px] text-brandGray200">30-Day unlimited access</div>
           </div>
-          <span class="font-outfit font-black text-xl text-brandRedLight">$350</span>
+          <span class="font-outfit font-black text-lg text-brandRedLight">₦150,000</span>
         </div>
       </div>
     </div>
@@ -830,11 +842,11 @@ function renderWellnessCheckoutScreen() {
 
       <h2 class="font-outfit font-bold text-sm text-white">Pass Checkout Summary</h2>
       <div class="p-4 rounded-2xl bg-brandGray800 border border-brandGray700 flex justify-between text-sm font-bold text-white">
-        <span>${tier} (All-Access Combo)</span>
-        <span class="text-brandRedLight">$${price}</span>
+        <span>₦{tier} (All-Access Combo)</span>
+        <span class="text-brandRedLight">₦₦{price}</span>
       </div>
 
-      <button onclick="appStore.purchaseWellnessPass('${tier}', 'All-Access Luxury Combo', ${price})" class="w-full py-4 rounded-xl bg-brandRed text-white font-bold text-xs uppercase shadow-lg shadow-brandRed/30">
+      <button onclick="appStore.purchaseWellnessPass('₦{tier}', 'All-Access Luxury Combo', ₦{price})" class="w-full py-4 rounded-xl bg-brandRed text-white font-bold text-xs uppercase shadow-lg shadow-brandRed/30">
         Pay & Generate Digital QR Pass
       </button>
     </div>
@@ -852,22 +864,22 @@ function renderPassDigitalAccessScreen() {
         <button onclick="appStore.setMobileScreen(17)" class="p-1.5 rounded-lg bg-brandGray800 text-white border border-brandGray700">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
-        <span class="text-xs font-bold ${isExpired ? 'text-brandRedLight' : 'text-brandRedLight'}">
-          ${isExpired ? 'EXPIRED' : 'ACTIVE PASS'}
+        <span class="text-xs font-bold ₦{isExpired ? 'text-brandRedLight' : 'text-brandRedLight'}">
+          ₦{isExpired ? 'EXPIRED' : 'ACTIVE PASS'}
         </span>
       </div>
 
-      <div class="p-6 rounded-3xl bg-brandGray800 border-4 ${isExpired ? 'border-brandGray700' : 'border-brandRed'} shadow-2xl space-y-4">
-        <div class="text-xs font-bold text-white uppercase">${pass.tier} Access Pass</div>
+      <div class="p-6 rounded-3xl bg-brandGray800 border-4 ₦{isExpired ? 'border-brandGray700' : 'border-brandRed'} shadow-2xl space-y-4">
+        <div class="text-xs font-bold text-white uppercase">₦{pass.tier} Access Pass</div>
 
         <div class="w-44 h-44 bg-white p-3 rounded-2xl mx-auto flex items-center justify-center">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${pass.qrCode}" class="w-full h-full object-contain">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=₦{pass.qrCode}" class="w-full h-full object-contain">
         </div>
 
-        <div class="font-mono text-xs font-bold text-brandGray200">${pass.qrCode}</div>
+        <div class="font-mono text-xs font-bold text-brandGray200">₦{pass.qrCode}</div>
       </div>
 
-      <button onclick="appStore.togglePassExpiry('${pass.id}')" class="w-full py-3 rounded-xl bg-brandGray800 border border-brandGray700 text-xs font-bold text-brandGray200">
+      <button onclick="appStore.togglePassExpiry('₦{pass.id}')" class="w-full py-3 rounded-xl bg-brandGray800 border border-brandGray700 text-xs font-bold text-brandGray200">
         Simulate Expiry (Toggle Pass Status)
       </button>
     </div>
