@@ -785,29 +785,32 @@ function renderWellnessLandingScreen() {
 // SCREEN 18: PASS SELECTION
 function renderPassSelectionScreen() {
   return `
-    <div class="p-5 space-y-4">
+    <div class="p-6 space-y-5">
       <div class="flex items-center justify-between">
-        <button onclick="appStore.setMobileScreen(17)" class="p-1.5 rounded-lg bg-brandGray800 text-white border border-brandGray700">
+        <button onclick="appStore.setMobileScreen(17)" class="p-2 rounded-xl bg-brandGray800 text-white border border-brandGray700 hover:border-brandRed transition-all">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
-        <h2 class="font-outfit font-bold text-sm text-white">Select Access Pass</h2>
+        <h2 class="font-serif font-bold text-base text-white">Select Access Pass</h2>
       </div>
 
-      <div class="space-y-3">
-        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-4 rounded-2xl bg-brandGray800 border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center">
-          <div>
-            <div class="font-bold text-sm text-white">Daily Pass</div>
-            <div class="text-[11px] text-brandGray200">24-Hour full facility access</div>
+      <div class="space-y-4">
+        <!-- Daily Pass -->
+        <div onclick="appStore.selectedPassTier = 'Daily Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandGray800 border border-brandGray700 hover:border-brandRed cursor-pointer flex justify-between items-center shadow-lg hover:scale-[1.01] transition-all">
+          <div class="space-y-1">
+            <div class="font-outfit font-bold text-base text-white">Daily Pass</div>
+            <div class="text-xs text-brandGray200">24-Hour full facility access</div>
           </div>
-          <span class="font-bold text-brandRedLight text-base">$45</span>
+          <span class="font-outfit font-black text-xl text-brandRedLight">$45</span>
         </div>
 
-        <div onclick="appStore.selectedPassTier = 'Monthly VIP'; appStore.setMobileScreen(19);" class="p-4 rounded-2xl bg-brandGray800 border border-brandRed cursor-pointer flex justify-between items-center">
-          <div>
-            <div class="font-bold text-sm text-white">Monthly VIP Combo Pass</div>
-            <div class="text-[11px] text-brandGray200">30-Day unlimited access</div>
+        <!-- Monthly VIP Combo Pass -->
+        <div onclick="appStore.selectedPassTier = 'Monthly VIP Combo Pass'; appStore.setMobileScreen(19);" class="p-5 rounded-2xl bg-brandMaroonDark border-2 border-brandRed cursor-pointer flex justify-between items-center shadow-2xl hover:scale-[1.01] transition-all relative">
+          <span class="absolute -top-2.5 right-4 px-2.5 py-0.5 rounded-full bg-brandRed text-[9px] font-bold text-white uppercase tracking-wider">Most Popular</span>
+          <div class="space-y-1">
+            <div class="font-outfit font-bold text-base text-white">Monthly VIP Combo Pass</div>
+            <div class="text-xs text-brandGray200">30-Day unlimited access</div>
           </div>
-          <span class="font-bold text-brandRedLight text-base">$350</span>
+          <span class="font-outfit font-black text-xl text-brandRedLight">$350</span>
         </div>
       </div>
     </div>
