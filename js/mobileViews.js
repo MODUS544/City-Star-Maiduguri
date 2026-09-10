@@ -151,9 +151,12 @@ function renderWelcomeScreen() {
       <div class="flex items-center justify-between pt-2">
         <div class="flex items-center gap-2">
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center p-0.5 border border-brandRed/40 overflow-hidden shadow-lg">
-            <img src="assets/logo.png" alt="City Star Maiduguri Emblem Logo" class="w-full h-full object-contain">
+            <img src="assets/logo.png" alt="City Star Restaurant & Accomodation Logo" class="w-full h-full object-contain">
           </div>
-          <span class="font-outfit font-extrabold text-sm text-white tracking-widest uppercase">City Star</span>
+          <div>
+            <span class="font-outfit font-extrabold text-sm text-white tracking-wider block uppercase">City Star</span>
+            <span class="text-[9px] font-semibold text-brandRedLight uppercase tracking-wider block">Restaurant & Accomodation</span>
+          </div>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="appStore.setMobileScreen(3)" class="relative p-2 rounded-full bg-brandGray800/80 border border-brandGray700 text-white hover:border-brandRed transition-all">
