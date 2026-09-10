@@ -172,13 +172,13 @@ function renderWelcomeScreen() {
       <div class="my-auto py-8">
         <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brandMaroon border border-brandRed/40 text-brandRedLight text-xs font-bold uppercase tracking-wider mb-4">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          Welcome to Maiduguri
+          Welcome to City Star
         </span>
         <h1 class="font-outfit font-black text-3xl text-white leading-tight">
           Unrivaled Luxury <br/><span class="text-brandRedLight">& Extraordinary</span> Experience
         </h1>
         <p class="text-xs text-brandGray200 mt-2 font-normal leading-relaxed">
-          Indulge in 5-star hotel accommodations, gourmet fine dining, and exclusive wellness membership.
+          Indulge in 5-star accommodations, gourmet fine dining, and exclusive wellness membership.
         </p>
       </div>
 
