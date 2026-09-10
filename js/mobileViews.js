@@ -215,8 +215,8 @@ function renderWelcomeScreen() {
               <i data-lucide="waves" class="w-5 h-5"></i>
             </div>
             <div class="text-left">
-              <div class="text-sm uppercase tracking-wider">WELLNESS</div>
-              <div class="text-[10px] text-brandGray200 font-normal">Infinity Pool, Spa & VIP Gym</div>
+              <div class="text-sm uppercase tracking-wider">POOL & FITNESS HUB</div>
+              <div class="text-[10px] text-brandGray200 font-normal">Premium Swimming Pool & Gym Facility</div>
             </div>
           </div>
           <i data-lucide="chevron-right" class="w-5 h-5 text-brandGray200"></i>
@@ -746,30 +746,30 @@ function renderOrderStatusScreen() {
   `;
 }
 
-// SCREEN 17: WELLNESS LANDING
+// SCREEN 17: POOL & FITNESS HUB
 function renderWellnessLandingScreen() {
   return `
-    <div class="relative min-h-[640px] flex flex-col justify-between p-5 bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden" style="background-image: linear-gradient(to bottom, rgba(63, 0, 10, 0.4), rgba(15, 23, 42, 0.95)), url('assets/wellness-hero.jpg');">
+    <div class="relative min-h-[640px] flex flex-col justify-between p-6 bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden" style="background-image: linear-gradient(to bottom, rgba(63, 0, 10, 0.45), rgba(15, 23, 42, 0.96)), url('assets/wellness-hero.jpg');">
       <div class="flex items-center justify-between z-10">
         <button onclick="appStore.setMobileScreen(1)" class="p-2 rounded-xl bg-brandGray800/80 backdrop-blur-md text-white border border-brandGray700">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </button>
-        <span class="text-xs font-bold text-brandRedLight uppercase tracking-widest px-3 py-1 rounded-full bg-brandMaroonDark/90 border border-brandRed/40">Wellness & Pool Suite</span>
+        <span class="text-xs font-bold text-brandRedLight uppercase tracking-widest px-3 py-1 rounded-full bg-brandMaroonDark/90 border border-brandRed/40">Pool & Fitness Hub</span>
       </div>
 
       <div class="my-auto py-6 z-10 space-y-2">
         <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brandMaroon border border-brandRed/40 text-brandRedLight text-xs font-bold uppercase tracking-wider">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          Poolside Sanctuary
+          Stay Active. Stay Refreshed.
         </span>
-        <h1 class="font-serif font-black text-3xl text-white leading-tight">Rejuvenate Body & Soul</h1>
-        <p class="text-xs text-brandGray200 font-normal leading-relaxed max-w-sm">Outdoor swimming pool, sun deck cabanas, thermal spa & VIP gym facility.</p>
+        <h1 class="font-serif font-black text-3xl text-white leading-tight">Pool & Fitness Hub</h1>
+        <p class="text-xs text-brandGray200 font-normal leading-relaxed max-w-sm">Premium swimming pool and fully equipped gym facility.</p>
       </div>
 
       <div class="p-5 rounded-2xl bg-brandGray800/95 border border-brandGray700 backdrop-blur-xl space-y-3.5 shadow-2xl z-10">
         <div class="flex items-center justify-between text-xs text-white font-bold">
           <span class="flex items-center gap-2 text-brandGray200 font-normal">
-            <i data-lucide="clock" class="w-4 h-4 text-brandRedLight"></i> Operating Hours
+            <i data-lucide="clock" class="w-4 h-4 text-brandRedLight"></i> Facility Operating Hours
           </span>
           <span class="text-brandRedLight font-bold">6:00 AM – 11:00 PM</span>
         </div>
