@@ -13,7 +13,6 @@
       theme: {
         extend: {
           colors: {
-            // Strict Color Palette: Red, Maroon, and Gray
             brandRed: '#DC2626',      /* Vibrant Primary Red */
             brandRedLight: '#EF4444', /* Bright Red Accent */
             brandRedDark: '#991B1B',  /* Deep Red */
@@ -48,12 +47,13 @@
 </head>
 <body class="bg-brandGray900 text-brandGray100 font-sans antialiased selection:bg-brandRed selection:text-white min-h-screen">
 
-  <!-- Top Global Header Rule: Brand Logo Top-Left -->
+  <!-- Top Global Header: Brand Logo Top-Left -->
   <header id="main-header" class="sticky top-0 z-50 bg-brandMaroonDark/95 backdrop-blur-xl border-b border-brandRed/30 px-4 lg:px-8 py-3 flex items-center justify-between shadow-2xl">
     <!-- Brand Logo Top-Left -->
     <div class="flex items-center gap-3 cursor-pointer" onclick="appStore.switchMode('mobile')">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandRed to-brandMaroon flex items-center justify-center shadow-lg shadow-brandRed/40 border border-white/20">
-        <i data-lucide="crown" class="w-5 h-5 text-white"></i>
+      <div id="brand-logo-container" class="w-10 h-10 rounded-xl bg-gradient-to-br from-brandRed to-brandMaroon flex items-center justify-center shadow-lg shadow-brandRed/40 border border-white/20 overflow-hidden">
+        <img id="brand-logo-img" src="assets/logo.png" alt="City Star Maiduguri Logo" class="w-full h-full object-contain p-1 hidden" onload="this.classList.remove('hidden'); document.getElementById('brand-logo-icon').classList.add('hidden');" onerror="this.onerror=null; this.src='assets/logo.svg';">
+        <i id="brand-logo-icon" data-lucide="crown" class="w-5 h-5 text-white"></i>
       </div>
       <div>
         <div class="flex items-center gap-2">
